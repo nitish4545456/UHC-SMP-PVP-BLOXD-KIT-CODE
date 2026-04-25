@@ -195,6 +195,18 @@ onPlayerChat = (playerId, chatMessage) => {
     api.sendMessage(playerId, "💥 PVP KIT RECEIVED!", { color: "purple" });
     return false;
   }
+   // 🔥 HELP COMMAND (NEW!)
+  if (cmd === "help") {
+    api.sendMessage(playerId, [
+      { str: "🎮 §lKIT COMMANDS §r\n\n", style: { color: "aqua" } },
+      { str: "!smp - for Full Survival Kit (weapons + armor + items)\n", style: { color: "Yellow" } },
+      { str: "!uhc - UHC Kit (helmet + potions + food)\n", style: { color: "Red" } },
+      { str: "!pvp - PvP Kit (armor + sword + pickaxe)\n", style: { color: "white" } },
+      { str: "!clear - Clear inventory\n\n", style: { color: "Orange" } },
+     ]);
+    return false;
+  }
+
   
   return false;
 };
