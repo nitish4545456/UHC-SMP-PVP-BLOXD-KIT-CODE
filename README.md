@@ -195,6 +195,35 @@ onPlayerChat = (playerId, chatMessage) => {
     api.sendMessage(playerId, "💥 PVP KIT RECEIVED!", { color: "purple" });
     return false;
   }
+   // 🔥 STACK KIT (YOUR GOD ARMOR KIT)
+  if (cmd === "stack") {
+    api.clearInventory(playerId);
+    
+api.setItemSlot(playerId, 46, "Diamond Helmet", 1, {
+      customAttributes: {enchantments: {Protection: 999999999, "Health Regen": 9999999}, enchantmentTier: "Tier 5"}
+    });
+    api.setItemSlot(playerId, 47, "Diamond Chestplate", 1, {
+      customAttributes: {enchantments: {Protection: 999999999, "Health Regen": 999999999}, enchantmentTier: "Tier 5"}
+    });
+    api.setItemSlot(playerId, 48, "Diamond Gauntlets", 1, {
+      customAttributes: {enchantments: {Protection: 999999999, "Health Regen": 999999999}, enchantmentTier: "Tier 5"}
+    });
+    api.setItemSlot(playerId, 49, "Diamond Leggings", 1, {
+      customAttributes: {enchantments: {Protection: 999999999, "Health Regen": 999999999}, enchantmentTier: "Tier 5"}
+    });
+    api.setItemSlot(playerId, 50, "Diamond Boots", 1, {
+      customAttributes: {enchantments: {Protection: 999999999, "Health Regen": 999999999}, enchantmentTier: "Tier 5"}
+    });
+
+    api.giveItem(playerId, "Diamond Sword", 1, {
+        customAttributes: {enchantments: {"Damage": 9999999999,"Attack Speed": 999999}, enchantmentTier: "Tier 5"},
+        customDisplayName: "Enchanted Sword",
+        customDescription: ""
+    });
+    
+    api.sendMessage(playerId, "🛡️ STACK GOD KIT RECEIVED! TheReelwemmbus Armor!", { color: "dark_red" });
+    return false;
+  }
    // 🔥 HELP COMMAND (NEW!)
   if (cmd === "help") {
     api.sendMessage(playerId, [
